@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: hsla(180, 56%, 42%, 1);
+  background: linear-gradient(90deg, hsla(180, 56%, 42%, 1) 9%, hsla(92, 55%, 62%, 1) 91%);
+  background: -moz-linear-gradient(90deg, hsla(180, 56%, 42%, 1) 9%, hsla(92, 55%, 62%, 1) 91%);
+  background: -webkit-linear-gradient(90deg, hsla(180, 56%, 42%, 1) 9%, hsla(92, 55%, 62%, 1) 91%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#2FA8A8", endColorstr="#9bd46a", GradientType=1 );
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+h1 {
+  color: #fff;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#spin_the_wheel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  max-width: 600px;
+  overflow: hidden;
+}
+
+#wheel {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+  max-height: 600px;
+}
+
+#spin {
+  font-family: "Lato", sans-serif;
+  font-size: clamp(0.9rem, 4vw, 1.5rem);
+  font-weight: bold;
+  user-select: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  aspect-ratio: 1;
+  min-width: 60px;
+  max-width: 180px;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  color: #fff;
+  box-shadow: 0 0 0 8px currentColor, 0 0px 15px 5px rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  transition: 0.8s;
+  z-index: 10;
+}
+
+#spin::after {
+  content: "";
+  position: absolute;
+  top: -8%;
+  border: clamp(5px, 2vw, 12px) solid transparent;
+  border-bottom-color: currentColor;
+  border-top: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 10px;
+  }
+  
+  #spin_the_wheel {
+    max-width: 90vw;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 100%;
+    gap: 15px;
+  }
+  
+  #spin_the_wheel {
+    max-width: 95vw;
+  }
+  
+  h1 {
+    font-size: 1.2rem;
+  }
+  
+  #spin {
+    min-width: 50px;
+  }
+}
