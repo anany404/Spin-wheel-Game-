@@ -8,7 +8,6 @@ Perfect for lucky draws, giveaways, and fun mini-games.
 
 ## 📸 Project Preview
 
-![Spin Wheel Preview](spin-wheel.png)
 
 > Make sure your image file `spin-wheel.png` is in the root folder of your project.  
 > If it's inside a folder (for example `assets`), then use:
